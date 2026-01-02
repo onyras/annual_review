@@ -346,6 +346,93 @@
             margin-bottom: 40px;
         }
 
+        /* Email Form */
+        .email-form {
+            max-width: 600px;
+            margin: 0 auto;
+        }
+
+        .form-row {
+            display: flex;
+            gap: 0;
+            background-color: var(--white);
+            border-radius: 8px;
+            box-shadow: 0 2px 12px rgba(0, 0, 0, 0.08);
+            overflow: hidden;
+        }
+
+        .form-row input[type="email"] {
+            flex: 1;
+            padding: 20px 24px;
+            border: none;
+            font-family: 'Crimson Pro', serif;
+            font-size: 18px;
+            color: var(--black);
+            background: transparent;
+            outline: none;
+        }
+
+        .form-row input[type="email"]::placeholder {
+            color: var(--black);
+            opacity: 0.4;
+        }
+
+        .form-row button {
+            padding: 20px 32px;
+            background-color: #3d5a4c;
+            color: var(--white);
+            border: none;
+            font-family: 'Crimson Pro', serif;
+            font-size: 18px;
+            font-style: italic;
+            cursor: pointer;
+            transition: background-color 0.2s;
+            white-space: nowrap;
+        }
+
+        .form-row button:hover {
+            background-color: #2d4a3c;
+        }
+
+        .checkbox-row {
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            gap: 12px;
+            margin-top: 20px;
+            font-size: 16px;
+            cursor: pointer;
+        }
+
+        .checkbox-row input[type="checkbox"] {
+            width: 20px;
+            height: 20px;
+            accent-color: #3d5a4c;
+            cursor: pointer;
+        }
+
+        .checkbox-row span {
+            color: var(--black);
+            opacity: 0.8;
+        }
+
+        .checkbox-row a {
+            color: #3d5a4c;
+            text-decoration: underline;
+        }
+
+        .checkbox-row a em {
+            font-style: italic;
+        }
+
+        .hero-form {
+            margin-top: 48px;
+        }
+
+        .hero-form .form-row {
+            background-color: var(--cream);
+        }
+
         /* Quote Block */
         .quote-block {
             padding: 80px 48px;
@@ -430,6 +517,18 @@
             .nav-links {
                 display: none;
             }
+
+            .form-row {
+                flex-direction: column;
+            }
+
+            .form-row input[type="email"] {
+                border-bottom: 1px solid rgba(0, 0, 0, 0.1);
+            }
+
+            .form-row button {
+                padding: 18px 24px;
+            }
         }
     </style>
 </head>
@@ -439,10 +538,8 @@
     <nav>
         <a href="/" class="logo">Nikolas Konstantin</a>
         <ul class="nav-links">
-            <li><a href="/coaching">Coaching</a></li>
-            <li><a href="/fellowship">Fellowship</a></li>
-            <li><a href="/writing">Writing</a></li>
-            <li><a href="/about">About</a></li>
+            <li><a href="https://nikolaskonstantin.com">Coaching</a></li>
+            <li><a href="https://wiseleadersfellowship.com">Fellowship</a></li>
         </ul>
     </nav>
 
@@ -451,12 +548,19 @@
         <p class="label">A Gift for Year's End</p>
         <h1>The Annual Reflection Guide for <em>CEOs</em></h1>
         <p class="hero-subtitle">Not a performance review. Not a goal-setting exercise. An invitation to slow down and ask the questions you have been too busy to ask.</p>
-        <a href="#get-guide" class="cta-primary">
-            <span class="cta-arrows">→</span>
-            Get the Free Guide
-            <span class="cta-arrows">←</span>
-        </a>
-        <p class="cta-note">PDF format. No email required.</p>
+        <form class="email-form hero-form" action="https://embeds.beehiiv.com/subscribe" method="POST">
+            <input type="hidden" name="publication_id" value="YOUR_PUBLICATION_ID">
+            <input type="hidden" name="utm_source" value="annual-reflection-guide">
+            <input type="hidden" name="utm_medium" value="website">
+            <div class="form-row">
+                <input type="email" name="email" placeholder="Your email address" required>
+                <button type="submit">Get the guide</button>
+            </div>
+            <label class="checkbox-row">
+                <input type="checkbox" name="newsletter" checked>
+                <span>Join the newsletter, <a href="https://themindfulceo.substack.com" target="_blank"><em>The Mindful CEO</em></a></span>
+            </label>
+        </form>
     </section>
 
     <!-- Origin Story Section -->
@@ -638,11 +742,21 @@
     <section class="cta-section" id="get-guide">
         <h2>Find a quiet hour. Begin.</h2>
         <p>This guide is free. Consider it a holiday gift from one person in the arena to another. The things worth seeing tend to reveal themselves only when we stop moving long enough to notice them.</p>
-        <a href="#download" class="cta-primary">
-            <span class="cta-arrows">→</span>
-            Download the Guide
-            <span class="cta-arrows">←</span>
-        </a>
+        
+        <form class="email-form" action="https://embeds.beehiiv.com/subscribe" method="POST">
+            <input type="hidden" name="publication_id" value="YOUR_PUBLICATION_ID">
+            <input type="hidden" name="utm_source" value="annual-reflection-guide">
+            <input type="hidden" name="utm_medium" value="website">
+            <input type="hidden" name="redirect_url" value="https://yoursite.com/thank-you-reflection-guide">
+            <div class="form-row">
+                <input type="email" name="email" placeholder="Your email address" required>
+                <button type="submit">Get the guide</button>
+            </div>
+            <label class="checkbox-row">
+                <input type="checkbox" name="newsletter" checked>
+                <span>Join the newsletter, <a href="https://themindfulceo.substack.com" target="_blank"><em>The Mindful CEO</em></a></span>
+            </label>
+        </form>
     </section>
 
     <!-- Final Quote -->
