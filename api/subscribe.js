@@ -4,7 +4,6 @@ export default async function handler(req, res) {
   res.setHeader('Access-Control-Allow-Methods', 'POST, OPTIONS');
   res.setHeader('Access-Control-Allow-Headers', 'Content-Type');
 
-  // Handle preflight request
   if (req.method === 'OPTIONS') {
     return res.status(200).end();
   }
@@ -19,26 +18,21 @@ export default async function handler(req, res) {
     return res.status(400).json({ error: 'Email is required' });
   }
 
-  const BEEHIIV_API_KEY = process.env.BEEHIIV_API_KEY;
-  const PUBLICATION_ID = process.env.BEEHIIV_PUBLICATION_ID;
-
   try {
     const response = await fetch(
-      `https://api.beehiiv.com/v2/publications/${PUBLICATION_ID}/subscriptions`,
+      `https://api.beehiiv.com/v2/publications/${process.env.BEEHIIV_PUBLICATION_ID}/subscriptions`,
       {
         method: 'POST',
         headers: {
-          'Authorization': `Bearer ${BEEHIIV_API_KEY}`,
           'Content-Type': 'application/json',
+          'Authorization': `Bearer ${process.env.BEEHIIV_API_KEY}`
         },
         body: JSON.stringify({
           email: email,
           reactivate_existing: true,
           send_welcome_email: false,
-          utm_source: 'annual-reflection-guide',
-          utm_medium: 'website',
-          tags: ['reflection-guide-download'],
-        }),
+          automation_ids: ['aut_2c9b787c-1195-4b26-92a3-a2ad1ab0278c']
+        })
       }
     );
 
