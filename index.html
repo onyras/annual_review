@@ -530,6 +530,21 @@
                 padding: 18px 24px;
             }
         }
+
+        .success-message {
+            font-family: 'Crimson Pro', Georgia, serif;
+            font-size: 20px;
+            font-style: italic;
+            color: #3d5a4c;
+            margin-top: 20px;
+        }
+
+        .error-message {
+            font-family: 'DM Sans', sans-serif;
+            font-size: 16px;
+            color: #c45c5c;
+            margin-top: 12px;
+        }
     </style>
 </head>
 <body>
@@ -548,22 +563,19 @@
         <p class="label">A Gift for Year's End</p>
         <h1>The Annual Reflection Guide for <em>CEOs</em></h1>
         <p class="hero-subtitle">Not a performance review. Not a goal-setting exercise. An invitation to slow down and ask the questions you have been too busy to ask.</p>
-        <form class="email-form hero-form" action="https://embeds.beehiiv.com/subscribe" method="POST">
-            <input type="hidden" name="publication_id" value="YOUR_PUBLICATION_ID">
-            <input type="hidden" name="utm_source" value="annual-reflection-guide">
-            <input type="hidden" name="utm_medium" value="website">
+        <form class="email-form hero-form" id="hero-form" onsubmit="handleSubscribe(event, 'hero')">
             <div class="form-row">
                 <input type="email" name="email" placeholder="Your email address" required>
                 <button type="submit">Get the guide</button>
             </div>
             <label class="checkbox-row">
                 <input type="checkbox" name="newsletter" checked>
-                <span>Join the newsletter, <a href="https://themindfulceo.substack.com" target="_blank"><em>The Mindful CEO</em></a></span>
+                <span>Join the newsletter, <a href="https://themindfulceo.beehiiv.com" target="_blank"><em>The Mindful CEO</em></a></span>
             </label>
         </form>
+        <p id="hero-success" class="success-message" style="display: none;">Thank you. Your guide is on its way.</p>
+        <p id="hero-error" class="error-message" style="display: none;">Something went wrong. Please try again.</p>
     </section>
-
-    <!-- Origin Story Section -->
     <section class="origin">
         <div class="origin-inner">
             <p>I have been working with CEOs for years now, and there is something I have noticed. By the time December comes around, most of them are exhausted in a way that is hard to explain. Not just tired. Something deeper. The kind of depletion that comes from holding too much for too long.</p>
@@ -743,20 +755,18 @@
         <h2>Find a quiet hour. Begin.</h2>
         <p>This guide is free. Consider it a holiday gift from one person in the arena to another. The things worth seeing tend to reveal themselves only when we stop moving long enough to notice them.</p>
         
-        <form class="email-form" action="https://embeds.beehiiv.com/subscribe" method="POST">
-            <input type="hidden" name="publication_id" value="YOUR_PUBLICATION_ID">
-            <input type="hidden" name="utm_source" value="annual-reflection-guide">
-            <input type="hidden" name="utm_medium" value="website">
-            <input type="hidden" name="redirect_url" value="https://yoursite.com/thank-you-reflection-guide">
+        <form class="email-form" id="bottom-form" onsubmit="handleSubscribe(event, 'bottom')">
             <div class="form-row">
                 <input type="email" name="email" placeholder="Your email address" required>
                 <button type="submit">Get the guide</button>
             </div>
             <label class="checkbox-row">
                 <input type="checkbox" name="newsletter" checked>
-                <span>Join the newsletter, <a href="https://themindfulceo.substack.com" target="_blank"><em>The Mindful CEO</em></a></span>
+                <span>Join the newsletter, <a href="https://themindfulceo.beehiiv.com" target="_blank"><em>The Mindful CEO</em></a></span>
             </label>
         </form>
+        <p id="bottom-success" class="success-message" style="display: none;">Thank you. Your guide is on its way.</p>
+        <p id="bottom-error" class="error-message" style="display: none;">Something went wrong. Please try again.</p>
     </section>
 
     <!-- Final Quote -->
@@ -770,6 +780,43 @@
         <p class="footer-tagline">Creating reflection spaces for people in responsibility.</p>
         <p class="footer-copy">© 2025 Nikolas Konstantin. All rights reserved.</p>
     </footer>
+
+    <script>
+    async function handleSubscribe(event, formType) {
+        event.preventDefault();
+        
+        const form = document.getElementById(formType + '-form');
+        const email = form.querySelector('input[type="email"]').value;
+        const button = form.querySelector('button');
+        
+        // Disable button while submitting
+        button.disabled = true;
+        button.textContent = 'Sending...';
+        
+        try {
+            const response = await fetch('/api/subscribe', {
+                method: 'POST',
+                headers: {
+                    'Content-Type': 'application/json',
+                },
+                body: JSON.stringify({ email }),
+            });
+            
+            if (response.ok) {
+                form.style.display = 'none';
+                document.getElementById(formType + '-success').style.display = 'block';
+            } else {
+                document.getElementById(formType + '-error').style.display = 'block';
+                button.disabled = false;
+                button.textContent = 'Get the guide';
+            }
+        } catch (error) {
+            document.getElementById(formType + '-error').style.display = 'block';
+            button.disabled = false;
+            button.textContent = 'Get the guide';
+        }
+    }
+    </script>
 
 </body>
 </html>
