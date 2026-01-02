@@ -1,0 +1,661 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Annual Reflection Guide for CEOs | Nikolas Konstantin</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Crimson+Pro:ital,wght@0,400;0,500;0,600;1,400;1,500&family=DM+Sans:ital,wght@0,400;0,500;0,600;1,400&display=swap" rel="stylesheet">
+    <style>
+        :root {
+            --black: #0a0a0a;
+            --white: #FFFFFF;
+            --cream: #F7F3ED;
+            --blue: #7FABC8;
+            --green: #A6BEA4;
+            --orange: #E08F6A;
+        }
+
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: 'DM Sans', sans-serif;
+            font-size: 18px;
+            line-height: 1.7;
+            color: var(--black);
+            background-color: var(--white);
+        }
+
+        /* Navigation */
+        nav {
+            padding: 24px 48px;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            max-width: 1400px;
+            margin: 0 auto;
+        }
+
+        .logo {
+            font-family: 'Crimson Pro', serif;
+            font-size: 24px;
+            font-weight: 500;
+            color: var(--black);
+            text-decoration: none;
+        }
+
+        .nav-links {
+            display: flex;
+            gap: 40px;
+            list-style: none;
+        }
+
+        .nav-links a {
+            font-size: 15px;
+            color: var(--black);
+            text-decoration: none;
+            opacity: 0.7;
+            transition: opacity 0.2s;
+        }
+
+        .nav-links a:hover {
+            opacity: 1;
+        }
+
+        /* Hero Section */
+        .hero {
+            padding: 80px 48px 100px;
+            max-width: 900px;
+            margin: 0 auto;
+            text-align: center;
+        }
+
+        .label {
+            font-size: 12px;
+            letter-spacing: 0.15em;
+            text-transform: uppercase;
+            color: var(--black);
+            opacity: 0.5;
+            margin-bottom: 24px;
+        }
+
+        h1 {
+            font-family: 'Crimson Pro', serif;
+            font-size: 56px;
+            font-weight: 500;
+            line-height: 1.15;
+            margin-bottom: 32px;
+            color: var(--black);
+        }
+
+        h1 em {
+            font-style: italic;
+            color: var(--blue);
+        }
+
+        .hero-subtitle {
+            font-size: 20px;
+            color: var(--black);
+            opacity: 0.8;
+            max-width: 600px;
+            margin: 0 auto 48px;
+        }
+
+        .cta-primary {
+            display: inline-block;
+            background-color: var(--black);
+            color: var(--white);
+            padding: 18px 48px;
+            font-size: 16px;
+            font-weight: 500;
+            text-decoration: none;
+            border-radius: 4px;
+            transition: all 0.2s;
+        }
+
+        .cta-primary:hover {
+            background-color: #2a2a2a;
+            transform: translateY(-1px);
+        }
+
+        .cta-arrows {
+            color: var(--blue);
+            margin: 0 8px;
+        }
+
+        .cta-note {
+            margin-top: 16px;
+            font-size: 14px;
+            opacity: 0.6;
+        }
+
+        /* Origin Story Section */
+        .origin {
+            background-color: var(--cream);
+            padding: 100px 48px;
+        }
+
+        .origin-inner {
+            max-width: 700px;
+            margin: 0 auto;
+        }
+
+        .origin p {
+            margin-bottom: 24px;
+        }
+
+        .origin p:last-of-type {
+            margin-bottom: 0;
+        }
+
+        .signature {
+            margin-top: 40px;
+            font-family: 'Crimson Pro', serif;
+            font-style: italic;
+            font-size: 20px;
+        }
+
+        /* Process Section */
+        .process {
+            padding: 100px 48px;
+            max-width: 1000px;
+            margin: 0 auto;
+        }
+
+        .section-header {
+            text-align: center;
+            margin-bottom: 80px;
+        }
+
+        h2 {
+            font-family: 'Crimson Pro', serif;
+            font-size: 42px;
+            font-weight: 500;
+            margin-bottom: 20px;
+        }
+
+        h2 em {
+            font-style: italic;
+            color: var(--blue);
+        }
+
+        .section-intro {
+            font-size: 18px;
+            opacity: 0.8;
+            max-width: 600px;
+            margin: 0 auto;
+        }
+
+        .steps-grid {
+            display: grid;
+            grid-template-columns: repeat(2, 1fr);
+            gap: 48px 64px;
+        }
+
+        .step {
+            padding: 32px 0;
+            border-top: 1px solid rgba(10, 10, 10, 0.1);
+        }
+
+        .step-number {
+            font-size: 12px;
+            letter-spacing: 0.15em;
+            text-transform: uppercase;
+            color: var(--green);
+            margin-bottom: 16px;
+            font-weight: 500;
+        }
+
+        .step h3 {
+            font-family: 'Crimson Pro', serif;
+            font-size: 24px;
+            font-weight: 500;
+            margin-bottom: 12px;
+        }
+
+        .step p {
+            font-size: 16px;
+            opacity: 0.7;
+            line-height: 1.6;
+        }
+
+        /* Testimonials Section */
+        .testimonials {
+            background-color: var(--black);
+            color: var(--white);
+            padding: 100px 48px;
+        }
+
+        .testimonials-inner {
+            max-width: 1200px;
+            margin: 0 auto;
+        }
+
+        .testimonials h2 {
+            text-align: center;
+            color: var(--white);
+            margin-bottom: 64px;
+        }
+
+        .testimonials h2 em {
+            color: var(--blue);
+        }
+
+        .testimonial-grid {
+            display: grid;
+            grid-template-columns: repeat(3, 1fr);
+            gap: 48px;
+        }
+
+        .testimonial {
+            padding: 32px;
+            background-color: rgba(255, 255, 255, 0.05);
+            border-radius: 8px;
+        }
+
+        .testimonial blockquote {
+            font-family: 'Crimson Pro', serif;
+            font-size: 20px;
+            font-style: italic;
+            line-height: 1.6;
+            margin-bottom: 24px;
+            opacity: 0.9;
+        }
+
+        .testimonial-author {
+            font-size: 14px;
+            opacity: 0.6;
+        }
+
+        /* Features Section */
+        .features {
+            padding: 100px 48px;
+            background-color: var(--cream);
+        }
+
+        .features-inner {
+            max-width: 900px;
+            margin: 0 auto;
+            text-align: center;
+        }
+
+        .features h2 {
+            margin-bottom: 48px;
+        }
+
+        .features-grid {
+            display: grid;
+            grid-template-columns: repeat(3, 1fr);
+            gap: 32px;
+            margin-bottom: 48px;
+        }
+
+        .feature {
+            padding: 32px 24px;
+            background-color: var(--white);
+            border-radius: 8px;
+        }
+
+        .feature-icon {
+            width: 48px;
+            height: 48px;
+            background-color: var(--green);
+            opacity: 0.3;
+            border-radius: 50%;
+            margin: 0 auto 20px;
+        }
+
+        .feature h4 {
+            font-family: 'Crimson Pro', serif;
+            font-size: 20px;
+            font-weight: 500;
+            margin-bottom: 8px;
+        }
+
+        .feature p {
+            font-size: 15px;
+            opacity: 0.7;
+        }
+
+        .format-note {
+            font-size: 16px;
+            opacity: 0.7;
+            margin-bottom: 40px;
+        }
+
+        /* CTA Section */
+        .cta-section {
+            padding: 100px 48px;
+            text-align: center;
+            max-width: 700px;
+            margin: 0 auto;
+        }
+
+        .cta-section h2 {
+            margin-bottom: 24px;
+        }
+
+        .cta-section p {
+            font-size: 18px;
+            opacity: 0.8;
+            margin-bottom: 40px;
+        }
+
+        /* Quote Block */
+        .quote-block {
+            padding: 80px 48px;
+            background-color: var(--black);
+            text-align: center;
+        }
+
+        .quote-block blockquote {
+            font-family: 'Crimson Pro', serif;
+            font-size: 32px;
+            font-style: italic;
+            color: var(--white);
+            max-width: 700px;
+            margin: 0 auto 24px;
+            line-height: 1.4;
+        }
+
+        .quote-block cite {
+            font-size: 14px;
+            color: var(--white);
+            opacity: 0.6;
+            font-style: normal;
+        }
+
+        /* Footer */
+        footer {
+            padding: 48px;
+            text-align: center;
+            border-top: 1px solid rgba(10, 10, 10, 0.1);
+        }
+
+        .footer-tagline {
+            font-family: 'Crimson Pro', serif;
+            font-size: 18px;
+            font-style: italic;
+            margin-bottom: 16px;
+            opacity: 0.8;
+        }
+
+        .footer-copy {
+            font-size: 13px;
+            opacity: 0.5;
+        }
+
+        /* Responsive */
+        @media (max-width: 900px) {
+            h1 {
+                font-size: 42px;
+            }
+
+            .steps-grid {
+                grid-template-columns: 1fr;
+            }
+
+            .testimonial-grid {
+                grid-template-columns: 1fr;
+            }
+
+            .features-grid {
+                grid-template-columns: 1fr;
+            }
+
+            nav {
+                padding: 24px;
+            }
+
+            .hero, .origin, .process, .testimonials, .features, .cta-section {
+                padding-left: 24px;
+                padding-right: 24px;
+            }
+        }
+
+        @media (max-width: 600px) {
+            h1 {
+                font-size: 32px;
+            }
+
+            h2 {
+                font-size: 32px;
+            }
+
+            .nav-links {
+                display: none;
+            }
+        }
+    </style>
+</head>
+<body>
+
+    <!-- Navigation -->
+    <nav>
+        <a href="/" class="logo">Nikolas Konstantin</a>
+        <ul class="nav-links">
+            <li><a href="/coaching">Coaching</a></li>
+            <li><a href="/fellowship">Fellowship</a></li>
+            <li><a href="/writing">Writing</a></li>
+            <li><a href="/about">About</a></li>
+        </ul>
+    </nav>
+
+    <!-- Hero Section -->
+    <section class="hero">
+        <p class="label">A Gift for Year's End</p>
+        <h1>The Annual Reflection Guide for <em>CEOs</em></h1>
+        <p class="hero-subtitle">Not a performance review. Not a goal-setting exercise. An invitation to slow down and ask the questions you have been too busy to ask.</p>
+        <a href="#get-guide" class="cta-primary">
+            <span class="cta-arrows">→</span>
+            Get the Free Guide
+            <span class="cta-arrows">←</span>
+        </a>
+        <p class="cta-note">PDF format. No email required.</p>
+    </section>
+
+    <!-- Origin Story Section -->
+    <section class="origin">
+        <div class="origin-inner">
+            <p>I have been working with CEOs for years now, and there is something I have noticed. By the time December comes around, most of them are exhausted in a way that is hard to explain. Not just tired. Something deeper. The kind of depletion that comes from holding too much for too long.</p>
+            
+            <p>The instinct at year's end is to push through. Finish strong. Maybe do a quick review of the numbers, set some goals, and collapse into the holidays. I understand that instinct. I have felt it myself.</p>
+            
+            <p>But I want to offer you something different.</p>
+            
+            <p>This guide is written the way I would talk to you if we were sitting together, somewhere quiet, with enough time and no agenda. Some of the questions might land. Others might not. That is fine. Take what is useful, leave the rest.</p>
+            
+            <p>The only thing I would ask: do not rush. The things worth seeing tend to reveal themselves only when we stop moving long enough to notice them.</p>
+            
+            <p class="signature">With warmth, Nikolas</p>
+        </div>
+    </section>
+
+    <!-- Process Section -->
+    <section class="process">
+        <div class="section-header">
+            <h2>Sixteen questions across four <em>territories</em></h2>
+            <p class="section-intro">The guide moves through the year that was, through you, through your company, and finally toward what comes next.</p>
+        </div>
+        
+        <div class="steps-grid">
+            <div class="step">
+                <p class="step-number">Territory One</p>
+                <h3>Arriving</h3>
+                <p>How are you, actually? Not the polished answer. Before we analyze anything, notice how you are arriving at this moment.</p>
+            </div>
+            
+            <div class="step">
+                <p class="step-number">Territory Two</p>
+                <h3>The Year That Was</h3>
+                <p>What actually happened? The honest story you would tell an old friend over a long dinner, after the pleasantries.</p>
+            </div>
+            
+            <div class="step">
+                <p class="step-number">Territory Three</p>
+                <h3>What You Are Proud Of</h3>
+                <p>The moments when you showed up as the leader you want to be. Evidence of what you are capable of, when conditions are right.</p>
+            </div>
+            
+            <div class="step">
+                <p class="step-number">Territory Four</p>
+                <h3>What You Avoided</h3>
+                <p>The conversations that needed to happen. The decisions that kept getting pushed. Naming them is the first step toward putting them down.</p>
+            </div>
+            
+            <div class="step">
+                <p class="step-number">Territory Five</p>
+                <h3>Your Energy</h3>
+                <p>The quality of leadership you bring when rested versus running on caffeine and willpower. What drained you? What sustained you?</p>
+            </div>
+            
+            <div class="step">
+                <p class="step-number">Territory Six</p>
+                <h3>Under Pressure</h3>
+                <p>When things got hard, which version of you showed up? Sharper and more present? Or controlling, distant, reactive?</p>
+            </div>
+            
+            <div class="step">
+                <p class="step-number">Territory Seven</p>
+                <h3>Blind Spots</h3>
+                <p>The things everyone around you can see except you. What feedback did you dismiss? What pattern do people keep pointing to?</p>
+            </div>
+            
+            <div class="step">
+                <p class="step-number">Territory Eight</p>
+                <h3>The Team</h3>
+                <p>What have you built? Where have you created capability versus dependency? If you lost your three best people, what would break?</p>
+            </div>
+            
+            <div class="step">
+                <p class="step-number">Territory Nine</p>
+                <h3>Culture</h3>
+                <p>Not the values on the wall. The lived experience. What behaviors actually get rewarded? What does everyone know but no one says?</p>
+            </div>
+            
+            <div class="step">
+                <p class="step-number">Territory Ten</p>
+                <h3>Your Health</h3>
+                <p>Sleep, exercise, energy. The things you keep meaning to address. Your body has been keeping score all year.</p>
+            </div>
+            
+            <div class="step">
+                <p class="step-number">Territory Eleven</p>
+                <h3>Relationships</h3>
+                <p>Who got your real attention this year? And who got your leftovers? The people who knew you before all this.</p>
+            </div>
+            
+            <div class="step">
+                <p class="step-number">Territory Twelve</p>
+                <h3>Aliveness</h3>
+                <p>When did you feel most alive? Not most productive. The moments when time disappeared and you remembered why any of this matters.</p>
+            </div>
+            
+            <div class="step">
+                <p class="step-number">Territory Thirteen</p>
+                <h3>What Wants to End</h3>
+                <p>A project, a role, a story you tell yourself, a way of working. Something that has run its course and is asking for your courage.</p>
+            </div>
+            
+            <div class="step">
+                <p class="step-number">Territory Fourteen</p>
+                <h3>What Wants to Begin</h3>
+                <p>If you get still enough, there is often a knowing that emerges. A direction trying to get your attention.</p>
+            </div>
+            
+            <div class="step">
+                <p class="step-number">Territory Fifteen</p>
+                <h3>The One Thing</h3>
+                <p>Real change does not happen through lists. It happens through commitment. The one change that would shift everything else.</p>
+            </div>
+            
+            <div class="step">
+                <p class="step-number">Territory Sixteen</p>
+                <h3>Accountability</h3>
+                <p>The insights from reflection fade once the noise returns. Who will hold you to what you discovered?</p>
+            </div>
+        </div>
+    </section>
+
+    <!-- Quote Block -->
+    <section class="quote-block">
+        <blockquote>"Your organization will eventually reflect who you are. Your clarity and your confusion. Your courage and your avoidance. Your presence and your absence."</blockquote>
+        <cite>From the guide</cite>
+    </section>
+
+    <!-- Testimonials Section -->
+    <section class="testimonials">
+        <div class="testimonials-inner">
+            <h2>What leaders are <em>saying</em></h2>
+            <div class="testimonial-grid">
+                <div class="testimonial">
+                    <blockquote>"This is not another productivity exercise. It is the first reflection guide that actually helped me see the patterns I had been living without knowing it."</blockquote>
+                    <p class="testimonial-author">CEO, Series B SaaS</p>
+                </div>
+                <div class="testimonial">
+                    <blockquote>"I have done annual reviews for years. This one felt different. Less like planning, more like finally being honest with myself about the year that was."</blockquote>
+                    <p class="testimonial-author">Founder, Fintech</p>
+                </div>
+                <div class="testimonial">
+                    <blockquote>"The questions are deceptively simple. I started thinking I would finish in an hour. Four hours later, I had clarity I had been avoiding all year."</blockquote>
+                    <p class="testimonial-author">CEO, Health Tech</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Features Section -->
+    <section class="features">
+        <div class="features-inner">
+            <h2>What is <em>included</em></h2>
+            <div class="features-grid">
+                <div class="feature">
+                    <div class="feature-icon"></div>
+                    <h4>16 Reflection Questions</h4>
+                    <p>Designed for CEOs who are tired of shallow exercises</p>
+                </div>
+                <div class="feature">
+                    <div class="feature-icon"></div>
+                    <h4>Space for Writing</h4>
+                    <p>Room to think, not fill in blanks</p>
+                </div>
+                <div class="feature">
+                    <div class="feature-icon"></div>
+                    <h4>No Time Pressure</h4>
+                    <p>Complete in one sitting or return over days</p>
+                </div>
+            </div>
+            <p class="format-note">Available as a beautifully designed PDF. Print it, write in it, keep it.</p>
+        </div>
+    </section>
+
+    <!-- CTA Section -->
+    <section class="cta-section" id="get-guide">
+        <h2>Find a quiet hour. Begin.</h2>
+        <p>This guide is free. Consider it a holiday gift from one person in the arena to another. The things worth seeing tend to reveal themselves only when we stop moving long enough to notice them.</p>
+        <a href="#download" class="cta-primary">
+            <span class="cta-arrows">→</span>
+            Download the Guide
+            <span class="cta-arrows">←</span>
+        </a>
+    </section>
+
+    <!-- Final Quote -->
+    <section class="quote-block">
+        <blockquote>"The person with the fewest blind spots wins."</blockquote>
+        <cite>Nikolas Konstantin</cite>
+    </section>
+
+    <!-- Footer -->
+    <footer>
+        <p class="footer-tagline">Creating reflection spaces for people in responsibility.</p>
+        <p class="footer-copy">© 2025 Nikolas Konstantin. All rights reserved.</p>
+    </footer>
+
+</body>
+</html>
