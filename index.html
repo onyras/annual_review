@@ -782,7 +782,14 @@ method: 'POST',
 headers: {
 'Content-Type': 'application/json',
 },
-body: JSON.stringify({ email, newsletter }),
+body: JSON.stringify({ 
+            email, 
+            newsletter,
+            utm_source: 'annual-reflection-guide',
+            utm_medium: 'website',
+            utm_campaign: 'annual-reflection-guide-2025',
+            referring_site: 'annual-reflection-guide'
+          }),
 });
 if (response.ok) {
 form.style.display = 'none';
