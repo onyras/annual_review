@@ -397,7 +397,7 @@ opacity: 0.4;
 }
 .form-row button {
 padding: 20px 32px;
-background-color: #3d5a4c;
+background-color: var(--blue);
 color: var(--white);
 border: none;
 font-family: 'Crimson Pro', serif;
@@ -408,7 +408,7 @@ transition: background-color 0.2s;
 white-space: nowrap;
 }
 .form-row button:hover {
-background-color: #2d4a3c;
+background-color: #6a9ab8;
 }
 .checkbox-row {
 display: flex;
@@ -422,7 +422,7 @@ cursor: pointer;
 .checkbox-row input[type="checkbox"] {
 width: 20px;
 height: 20px;
-accent-color: #3d5a4c;
+accent-color: var(--blue);
 cursor: pointer;
 }
 .checkbox-row span {
@@ -430,7 +430,7 @@ color: var(--black);
 opacity: 0.8;
 }
 .checkbox-row a {
-color: #3d5a4c;
+color: var(--blue);
 text-decoration: underline;
 }
 .checkbox-row a em {
