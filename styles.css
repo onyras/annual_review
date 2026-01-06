@@ -138,8 +138,19 @@ background-color: var(--cream);
 padding: 100px 48px;
 }
 .origin-inner {
-max-width: 700px;
+max-width: 1000px;
 margin: 0 auto;
+display: grid;
+grid-template-columns: 1fr 280px;
+gap: 60px;
+align-items: start;
+}
+.origin-content {
+max-width: 600px;
+}
+.origin-image img {
+width: 100%;
+height: auto;
 }
 .origin p {
 margin-bottom: 24px;
@@ -486,6 +497,15 @@ margin: 0 auto 48px;
 .hero-logo {
 max-width: 280px;
 height: auto;
+}
+.origin-inner {
+grid-template-columns: 1fr;
+gap: 40px;
+}
+.origin-image {
+order: -1;
+max-width: 200px;
+margin: 0 auto;
 }
 .journey-cards {
 grid-template-columns: 1fr;
