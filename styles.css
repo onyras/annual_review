@@ -137,13 +137,11 @@ display: flex;
 justify-content: center;
 align-items: center;
 }
-.hero-illustration svg {
+.hero-illustration img {
 display: block;
 width: 100%;
-max-width: 450px;
+max-width: 400px;
 height: auto;
-border-radius: 12px;
-box-shadow: 0 8px 32px rgba(0, 0, 0, 0.12);
 }
 /* Origin Story Section */
 .origin {
