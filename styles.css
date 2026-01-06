@@ -133,16 +133,17 @@ font-size: 14px;
 opacity: 0.6;
 }
 .hero-illustration {
-margin-top: 48px;
-max-width: 500px;
-border-radius: 12px;
-overflow: hidden;
-box-shadow: 0 8px 32px rgba(0, 0, 0, 0.12);
+display: flex;
+justify-content: center;
+align-items: center;
 }
 .hero-illustration svg {
 display: block;
 width: 100%;
+max-width: 450px;
 height: auto;
+border-radius: 12px;
+box-shadow: 0 8px 32px rgba(0, 0, 0, 0.12);
 }
 /* Origin Story Section */
 .origin {
@@ -502,6 +503,9 @@ order: 2;
 .hero-logo-container {
 order: 1;
 justify-content: center;
+}
+.hero-illustration {
+order: 1;
 }
 .hero-subtitle {
 margin: 0 auto 48px;
