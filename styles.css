@@ -68,11 +68,8 @@ justify-content: center;
 align-items: center;
 }
 .hero-logo {
-width: 380px;
-height: 380px;
-border-radius: 50%;
-object-fit: cover;
-box-shadow: 0 20px 60px rgba(0, 0, 0, 0.08);
+max-width: 100%;
+height: auto;
 }
 @keyframes breathe {
 0%, 100% {
@@ -487,8 +484,8 @@ justify-content: center;
 margin: 0 auto 48px;
 }
 .hero-logo {
-width: 280px;
-height: 280px;
+max-width: 280px;
+height: auto;
 }
 .journey-cards {
 grid-template-columns: 1fr;
