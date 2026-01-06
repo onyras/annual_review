@@ -132,6 +132,18 @@ margin-top: 16px;
 font-size: 14px;
 opacity: 0.6;
 }
+.hero-illustration {
+margin-top: 48px;
+max-width: 500px;
+border-radius: 12px;
+overflow: hidden;
+box-shadow: 0 8px 32px rgba(0, 0, 0, 0.12);
+}
+.hero-illustration svg {
+display: block;
+width: 100%;
+height: auto;
+}
 /* Origin Story Section */
 .origin {
 background-color: var(--cream);
