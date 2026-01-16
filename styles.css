@@ -580,13 +580,21 @@ margin-top: 12px;
 }
 
 /* ========================================
+   Nav Right Container
+   ======================================== */
+
+.nav-right {
+    display: flex;
+    align-items: center;
+    gap: 2rem;
+}
+
+/* ========================================
    Other Tests Dropdown
    ======================================== */
 
 .other-tests-dropdown {
-    position: fixed;
-    top: 1rem;
-    right: 1rem;
+    position: relative;
     z-index: 200;
 }
 
@@ -783,9 +791,8 @@ margin-top: 12px;
 }
 
 @media (max-width: 640px) {
-    .other-tests-dropdown {
-        top: 0.75rem;
-        right: 0.75rem;
+    .nav-right {
+        gap: 0;
     }
 
     .dropdown-trigger {
